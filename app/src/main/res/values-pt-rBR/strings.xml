@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="app_names">
+        <item>Portifólio</item>
+        <item>Sunshine</item>
+        <item>Filmes populares</item>
+        <item>Stock Hawk</item>
+        <item>Faça-o maior</item>
+        <item>Faça seu aplicativo com Material</item>
+        <item>Seja onipresente</item>
+        <item>Capstone</item>
+    </string-array>
+</resources>
