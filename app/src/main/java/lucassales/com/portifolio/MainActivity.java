@@ -1,11 +1,14 @@
 package lucassales.com.portifolio;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.DrawableRes;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +44,24 @@ public class MainActivity extends AppCompatActivity {
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    
+                    Intent browserIntent;
+                    switch (position) {
+                        case 0:
+                            browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/lucassales2/Portfolio"));
+                            startActivity(browserIntent);
+                            break;
+                        case 1:
+                            browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/lucassales2/Sunshine"));
+                            startActivity(browserIntent);
+                            break;
+                        case 2:
+                            browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/lucassales2/MovieDataBase"));
+                            startActivity(browserIntent);
+                            break;
+                        default:
+                            Toast.makeText(getApplicationContext(), getString(R.string.working), Toast.LENGTH_SHORT).show();
+                            break;
+                    }
                 }
             });
         }
