@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.DrawableRes;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
 
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements PortfolioAdapter.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         List<App> list = new ArrayList<>();
         String[] stringArray = getResources().getStringArray(R.array.app_names);
         for (int i = 0; i < stringArray.length; i++) {
@@ -43,8 +45,8 @@ public class MainActivity extends AppCompatActivity implements PortfolioAdapter.
                     break;
             }
             list.add(new App(drawable, appName, url));
-            recyclerView.setAdapter(new PortfolioAdapter(list, this));
         }
+        recyclerView.setAdapter(new PortfolioAdapter(list, this));
 
 
     }
